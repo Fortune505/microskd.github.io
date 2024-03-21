@@ -1,0 +1,65 @@
+<!-- Страница "Регистрации" -->
+<html>
+<head>
+<title>Регистрация</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<link rel="icon" href="../photo/logo.png" type="image/png">
+<link rel="stylesheet" type="text/css" href='css/syle-reg-and-vxod.css'>
+<link rel="stylesheet" type="text/css" href='css/styles_register_soob.css'>
+<link rel="stylesheet" type="text/css" href='syle-reg-and-vxod.css'>
+<link rel="stylesheet" type="text/css" href='styles_register_soob.css'>
+</head>
+<body>
+<div class="center-reg">
+<div class="vixod" onclick="window.location.href='O_nas.html'"><b>&#8592</b></div>
+<h1>Регистрация</h1>
+<form action="php/php_reg_and_vxod/register-O_nas.php" method="post" class="form">
+
+<div class="nastr-form">
+    <!-- Фамилия -->
+    <label for="surname">Фамилия</label><br>
+    <input class="input" type="text" id="surname" name="surname" pattern="[А-Яа-яЁё\s]+" placeholder="Фамилия" required><br>
+    <!-- Имя -->
+    <label for="name">Имя</label><br>
+    <input class="input" type="text" id="name" name="name" pattern="[А-Яа-яЁё\s]+" placeholder="Имя" required><br>
+    <!-- Отчество -->
+    <label for="patronymic">Отчество</label><br>
+    <input class="input" type="text" id="patronymic" name="patronymic" pattern="[А-Яа-яЁё\s]+" placeholder="Отчество" required><br>
+    <!-- Телефон -->
+    <label for="phone">Телефон</label><br>
+    <input class="input" type="tel" id="phone" name="phone" pattern="[0-9]+" placeholder="Телефон" required><br>
+    <!-- Электронная почта -->
+    <label for="email">Электронная почта</label><br>
+    <input class="input" type="email" name="email" placeholder="Введите Email" required><br>
+    <!-- Пароль -->
+    <label for="password">Пароль</label><br>
+    <input class="input" type="password" name="password" id="password" placeholder="Введите пароль" required>
+    <p class="pacas-passw"><input type="checkbox" id="show_password" onclick="showPassword()">Показать пароль</p>
+    <button type="submit" id="submit" class="popup submit" onclick="showSoob_reg()">Зарегистрироваться</button>
+</div>
+
+</form>
+<p class="link-doun-button link-doun-button-in-reg">Естли у вас <a href="login-O_nas.html">есть аккаунт,</a> то вы можете в него войти.</p>
+<span class="popuptext" id="mySoob_reg">
+    <span class="close" onclick="closeSoob_reg()">X</span>
+    <p class="soob">Ошибка при регистрации.</p>
+</span>
+</div>
+<p onclick="showSoob_log()" id="mySoob_log"></p>
+<p onclick="closeSoob_log()"></p>
+<script>
+function showPassword() {
+var password = document.getElementById("password");
+var checkbox = document.getElementById("show_password");
+if (checkbox.checked) {
+password.type = "text";
+} else {
+password.type = "password";
+}
+}
+</script>
+<script src='../js/soob_reg.js'></script>
+<script src='../js/soob_log.js'></script>
+</body>
+</html>

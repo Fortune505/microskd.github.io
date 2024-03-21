@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" >
+        <link rel="icon" href="photo/logo.png" type="image/png">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <link rel="stylesheet" type="text/css" href="styles_in_kart.css">
+        <title>Синий Крест Давида</title>
+    </head>
+    <body>
+        <p class="worrning">
+            <b>Внимание!</b> <br>
+            Данный сайт является дипломной работой студента.
+        </p>
+        <div class="krasoti"></div>
+        <div class="main">
+            <div class="header_shap">
+                <div id="contentshapki">
+                    <div id="left-shapka">
+                        <div class="left-logo">
+                            <a class="link-logo" href="index.html"><img class="logo" src="photo/logo.png"></a>
+                        </div>
+                        <div class="right-name">
+                            <h1 class="name-sait"><a class="link-name" href="index.html">Микрозайм Синий Крест Давида</a></h1>
+                        </div>
+                    </div>
+                    <div id="right-shapka">
+                        <div class="mission"><p>Финансовая помощь в надежных руках!</p></div>
+                        <div class="time_rab"><p>Время работы (по Иркутскому времени):<br>С Пн. по Пт.: 10:00-16:00<br>Выходные дни Сб. и Вс.</p></div>
+                        <div class="number"><p>Телефон: 8(800) 555 35-35</p></div>
+                    </div>
+                </div>    
+            </div><!--Конец div header-->
+            <header class="header perexod">
+                <div class="container">
+                    <div class="header_body">
+                        <a href="index.html" class="header_logo"> <!-- <- Это лого меню -->
+                            <img class="logo logo_menu" src="photo/logo.png">
+                        </a>
+                        <div class="header_burger"><!-- <- Это бургер меню -->
+                            <span></span>
+                        </div>
+                        <nav class="header_menu menu">
+                            <ul class="header_list">
+                                <li>
+                                    <a href="index.html" class="header_link">Главная</a>
+                                </li>
+                                <li>
+                                    <a href="O_nas.html" class="header_link">О нас</a>
+                                </li>
+                                <li>
+                                    <a href="kontakti.html" class="header_link">Контакты</a>
+                                </li>
+                                <li class="header_link drop-down ">
+                                    <a href="#" class="drop-btn ">Аккаунт</a>
+                                    <div class="dropdown-content">
+                                        <a href="login-kart_den6.html" class="test">Войти</a>
+                                        <a href="register-kart_den6.html" class="test">Зарегистрация</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+    
+            </header><!--Конец div perexod-->
+            
+            <div class="content">
+                <div class="container">
+                    <form class="form" action="php/php_den/process_kart6.php" method="post">
+                        <div class="center-stolb_left">
+                            <h2 class="h2-left">Рассчитайте займ</h2>
+                            <!-- Сумма займа -->
+                            <div class="label">
+                                <label for="loanAmount">Сумма займа</label>
+                            </div>
+                            <div class="span-left">
+                                <span id='output' name="loanAmount">1000</span><div class="probel"></div><p> руб.</p><br>
+                            </div>
+                            <input type="range" id="loanAmount" name="loanAmount" min="1000" max="4000" step="1000" value="1000" onchange="calculate()"><br>
+                            <div class="botton-slaider"><div class="botton-slaider-left botton-slaider-den-tre-lil"><p>1 тыс.</p></div><div class="botton-slaider-right"><p>4 тыс.</p></div></div>
+                            <!-- Срок займа -->
+                            <div class="label">
+                                <label for="">Срок займа</label><br/>
+                            </div>
+                            <!-- Кнопки для срока займа -->
+                            <div class="buttons">
+                                <div class="buttons_btn">
+                                    <button class="btn" type="button" id="one-years" onclick="setTerm(1)">1 дн.</button>
+                                    <button class="btn" type="button" id="two-years" onclick="setTerm(2)">2 дн.</button>
+                                    <button class="btn" type="button" id="three-years" onclick="setTerm(3)">3 дн.</button>
+                                
+                                    <button class="btn" type="button" id="four-years" onclick="setTerm(4)">4 дн.</button>
+                                </div>
+                            </div>
+                            <input type="hidden" id="loanTerm" name="loanTerm" value="1">
+                        </div><!--Конец div loan-details-->
+                        <div class="center-stolb_right">
+                            <h2 class="h2-right">Еженедельный платёж</h2>
+                            <div class="span-right">
+                                <span id="payment" name="payment">2000</span><div class="probel"></div><p> руб.</p>
+                            </div>
+                            <div class="nastr-form">
+                                <!-- Фамилия -->
+                                <label for="last-name">Фамилия</label><br>
+                                <input type="text" id="last-name" name="lastName" pattern="[А-Яа-яЁё\s]+" placeholder="Фамилия" required><br>
+                                <!-- Имя -->
+                                <label for="first-name">Имя</label><br>
+                                <input type="text" id="first-name" name="firstName" pattern="[А-Яа-яЁё\s]+" placeholder="Имя" required><br>
+                                <!-- Отчество -->
+                                <label for="middle-name">Отчество</label><br>
+                                <input type="text" id="middle-name" name="middleName" pattern="[А-Яа-яЁё\s]+" placeholder="Отчество" required><br>
+                                <!-- Телефон -->
+                                <label for="phone">Телефон</label><br>
+                                <input type="tel" id="phone" name="phone" pattern="[0-9]+" placeholder="Телефон" required><br>
+                                <!-- Кнопка отправить -->
+                                <button type="submit" id="submit" class="popup" onclick="showPopup()">Отправить на одобрение</button>
+                                <span class="popuptext" id="myPopup">
+                                    <span class="close" onclick="closePopup()">X</span>
+                                    <p class="soob">Мы вам позвоним в течение месяца или недели</p>
+                                </span>
+                            </div>
+                        </div><!--Конец div payment-form-->
+                    </form>
+                </div><!--Конец div container-->
+                
+            </div><!--Конец div content-->
+            
+        </div><!--Конец div main-->
+        <div class="footer">
+            <div class="footer-stolb">
+                <div>
+                    <p>ООО "Синий Крест Давида" это предприятие, специализирующееся на предоставлении микрозаймов. Мы являемся надежным финансовым партнером для физических лиц и предпринимателей, которым требуется небольшая сумма денег на краткосрочный период.</p><br>
+                    <p>Мы предлагаем простой и удобный процесс оформления заявки на микрозаймы. Наша команда профессионалов обеспечивает быстрое рассмотрение заявок и выдачу средств без лишних затрат времени. Мы стремимся к максимальной прозрачности и справедливости в условиях займа.</p><br>
+                    <p>Ключевые преимущества работы с ООО "Синий Крест Давида" включают:<br>
+                        1. Быстрое одобрение и выдача займа.<br>
+                        2. Гибкие условия погашения, адаптирующиеся к финансовым возможностям заемщика.<br>
+                        3. Профессиональный и доброжелательный сервис, ориентированный на потребности клиентов.
+                    </p><br>
+                    <p>Мы стремимся предоставить доступные финансовые решения, помогая нашим клиентам справиться с неожиданными расходами или реализовать свои финансовые цели.</p>
+                </div>
+            </div>
+            <div class="footer-stolb">
+                <div>
+                    <p>Время работы (по Иркутскому времени):<br>Пн.: 10:00-16:00 <br>Вт.: 10:00-17:00 <br>Ср.: 9:00-16:00 <br>Чт.: 9:00-17:00 <br>Пт.: 10:00-16:00<br>Выходные дни Сб. и Вс.</p>
+                    <p>Телефон: 8(800) 555 35-35</p>
+                    <p>Почта:</p>
+                    <div class="dlban">
+                        <img class="baner" src="photo/18plus.png">
+                    </div>
+                </div>
+            </div>
+        </div><!--Конец div footer-->
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+        <script src="js/script.js"></script>
+        <script src='js/js_den/script_in_kart6.js'></script>
+        <script src='js/SOOB.JS'></script>
+    </body>
+</html>

@@ -1,0 +1,53 @@
+<!-- Страница "Вход" -->
+<html>
+<head>
+<title>Вход</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<link rel="icon" href="../photo/logo.png" type="image/png">
+<link rel="stylesheet" type="text/css" href='css/syle-reg-and-vxod.css'>
+<link rel="stylesheet" type="text/css" href='css/styles_login_soob.css'>
+<link rel="stylesheet" type="text/css" href='syle-reg-and-vxod.css'>
+<link rel="stylesheet" type="text/css" href='styles_login_soob.css'>
+</head>
+<body>
+
+<div class="center">
+<div class="vixod" onclick="window.location.href='kart_mesis6.html'"><b>&#8592</b></div>    
+<h1>Вход</h1>
+<form action="php/php_reg_and_vxod/login-kart_mesis6.php" method="post" class="form">
+    <div class="nastr-form">
+        <!-- Электронная почта -->
+        <label for="email">Электронная почта</label><br>
+        <input class="input" type="email" name="email" placeholder="Введите Email" required><br>
+        <!-- Пароль -->
+        <label for="password">Пароль</label><br>
+        <input class="input" type="password" name="password" id="password" placeholder="Введите пароль" required>
+        <p class="pacas-passw"><input type="checkbox" id="show_password" onclick="showPassword()">Показать пароль</p>
+        <button type="submit" id="submit" class="popup submit" onclick="showSoob_log()">Войти в аккаунт</button> 
+    </div>
+    
+</form>
+<p class="link-doun-button">Естли у вас <a href="register-kart_mesis6.html">нет аккаунта,</a> то вы можете его создать.</p>
+<span class="popuptext" id="mySoob_log">
+    <span class="close" onclick="closeSoob_log()">X</span>
+    <p class="soob">Неверная электронная почта или пароль.</p>
+</span>
+</div>
+<p onclick="showSoob_reg()" id="mySoob_reg"></p>
+<p onclick="closeSoob_reg()"></p>
+<script>
+function showPassword() {
+var password = document.getElementById("password");
+var checkbox = document.getElementById("show_password");
+if (checkbox.checked) {
+password.type = "text";
+} else {
+password.type = "password";
+}
+}
+</script>
+<script src='../js/soob_reg.js'></script>
+<script src='../js/soob_log.js'></script>
+</body>
+</html>

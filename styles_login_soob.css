@@ -1,0 +1,37 @@
+
+/* Стиль для всплывающего окна */
+.popup {
+    display: inline-block;
+    cursor: pointer;
+}    
+.popuptext {
+    position: relative;
+    visibility: hidden;
+    width: 400px;
+    color: #fff;
+    background: rgb(1, 1, 133);
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    align-items: center;
+    margin-top: 30px;
+    position: fixed;
+    z-index: 1;
+}
+@media (max-width:430px){
+    .popuptext {
+        width: 90%;
+    }
+}
+.soob{
+    margin-top: 11px;
+}
+
+/* Стиль для кнопки закрытия */
+.close {
+    position: absolute;
+    top: 0;
+    right: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
